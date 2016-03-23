@@ -370,10 +370,52 @@
             </script>
           </section>
 
+          <section data-markdown>
+            <script type="text/template">
+              ## Find 方法
+
+              ```
+                const wrapper = shallow(<MyComponent />);
+                expect(wrapper.find('.foo')).to.have.length(1);
+                // compound selector
+                expect(wrapper.find('div.some-class')).to.have.length(3);
+                // CSS id selector
+                expect(wrapper.find('#foo')).to.have.length(1);
+                // Component
+                expect(wrapper.find(Foo)).to.have.length(1);
+                // Property
+                expect(wrapper.find({prop: 'value'})).to.have.length(1);
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## debug 方法
+
+              ```
+                const wrapper = shallow(<Book title="Huckleberry Finn" />);
+                console.log(wrapper.debug());
+
+                // 输出
+                <div>
+                  <h1 className="title">Huckleberry Finn</h1>
+                </div>
+              ```
+            </script>
+          </section>
 				</section>
 
 				<section>
-					<h2>Pricate</h2>
+          <section data-markdown style="text-align: left">
+            <script type="text/template">
+              ## React组件测试点
+
+              * render逻辑
+              * event方法
+
+            </script>
+          </section>
 				</section>
 
 				<section>
