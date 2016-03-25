@@ -50,19 +50,21 @@
             <h2>AVA 是什么</h2>
             <p>
               可以并行执行测试文件，并发运行测试的测试框架。
-              <!-- 作者 -->
+              <!-- 介绍作者 -->
+              <!-- 31 to 11 -->
             </p>
           </section>
 
 					<section>
             <h2>Why AVA</h2>
             <p>
-              - 配置少 <br>
+              - 配置简单 <br>
               - 并发测试 <br>
               - 多种报告 <br>
               - 隔离环境 <br>
               <!-- 让你编写更具原子性的测试 -->
               <!-- VS MOCHA -->
+              <!-- 并发测试的注意点：文件写入 -->
             </p>
           </section>
 
@@ -139,17 +141,10 @@
             <script type="text/template">
               ## 支持Async
               ```
-                test(async function (t) {
-                  const value = await promiseFn();
-                  t.true(value);
-                });
-
-                // 异步箭头函数
                 test(async t => {
                   const value = await promiseFn();
                   t.true(value);
                 });
-
               ```
             </script>
           </section>
@@ -159,11 +154,11 @@
               ## 支持Callback
               ```
                 test.cb(t => {
-                  // t.end 自动检查第一个参数是否为错误
                   fs.readFile('data.txt', t.end);
                 });
               ```
             </script>
+            <!-- t.plan() -->
           </section>
 				</section>
 
